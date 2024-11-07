@@ -1,0 +1,1 @@
+ALTER TABLE "username" DROP COLUMN IF EXISTS "email";

@@ -1,17 +1,31 @@
 "use client";
-
+import React, { useState } from "react";
 import { Sidebar_General, Sidebar_Menu } from "@/constants/const-sidebar";
 import { ISidebarItem } from "@/types/share";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
+import { NavBarHome } from "@/components/Bar/navbar";
+import { signOut } from "next-auth/react"
+
 function HomeLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-    // const [selectedMenu, setSelectedMenu] = useState("Admin Functions");
+    const [selectedMenu, setSelectedMenu] = useState("Bashboard");
+    
+  
     const pathName = usePathname();
     return (
       <div className="h-screen w-full overflow-hidden bg-[#e3edf67c]">
         <div className="flex h-[150px] w-full flex-row bg-[#1450A3]">
+        <Image
+          src="/assets/logogrowtech.png"
+          alt="Logo"
+          width={300}
+          height={150}
+          
+        />
+
+        <NavBarHome items={selectedMenu} />
        
       </div>
       <section className="flex h-[calc(100%-150px)] overflow-hidden">
@@ -25,7 +39,7 @@ function HomeLayout({ children }: Readonly<{ children: React.ReactNode }>) {
                 <Link
                   key={item.route}
                   href={item.route}
-                //   onClick={() => setSelectedMenu(item.label)}
+                  onClick={() => setSelectedMenu(item.label)}
                 >
                   <div
                     className={` mx-auto flex p-2  ${isActive ? " bg-sky-500" : "bg-inherit hover:bg-sky-400"} `}
@@ -69,7 +83,18 @@ function HomeLayout({ children }: Readonly<{ children: React.ReactNode }>) {
                   </Link>
                 );
               })}
+               <div  className="mt-auto flex flex-1  gap-3 mx-auto p-2 bg-inherit hover:bg-sky-400 w-full " >
+                <Image 
+                src={"/assets/log-out.svg"}
+                alt="logout"
+                width={30}
+                height={20}
+                />
+            <button onClick={() => signOut()} className="-ml-24 p-2 text-xl text-white w-full" >Sign Out</button>
             </div>
+            </div>
+           
+            
           </div>
         </section>
         <section className="flex w-full">{children}</section>

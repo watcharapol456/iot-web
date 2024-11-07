@@ -25,15 +25,15 @@ const HomePage = () => {
 
   useEffect(() => {
     if (progress >= 100) {
-      router.push("/bashboard");
+      router.push("/dashboard");
     }
   }, [progress, router]);
 
   return (
     <div className="h-screen w-full flex flex-col items-center justify-center">
-    <div className="grid justify-items-center gap-y-20">
-      <Image src="/next.svg" alt="logo" width={512} height={512} />
-      <Progress value={progress} className="w-1/2" />
+    <div className="grid justify-items-center gap-y-10">
+      <Image src="/assets/logogrowtech.png" alt="logo" width={412} height={412} />
+      <Progress value={progress} className="" />
     </div>
   </div>
   

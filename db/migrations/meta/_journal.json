@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1730656469068,
+      "tag": "0000_omniscient_leper_queen",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1730724559736,
+      "tag": "0001_swift_robin_chapel",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1730734089587,
+      "tag": "0002_burly_human_fly",
+      "breakpoints": true
+    }
+  ]
+}

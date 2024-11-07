@@ -2,8 +2,8 @@ import { ISidebarItem } from "@/types/share";
 export const Sidebar_Menu = [
     {
         imgURL : "/assets/layout-dashboard.svg",
-        route : "/bashboard",
-        label : "Bashboard"
+        route : "/dashboard",
+        label : "Dashboard"
     },
     {
         imgURL : "/assets/file.svg",
@@ -25,14 +25,10 @@ export const Sidebar_Menu = [
 export const Sidebar_General = [
     {
         imgURL : "/assets/sliders-horizontal.svg",
-        route : "/Bashboard",
+        route : "/",
         label : "Settings"
     },
-    {
-        imgURL : "/assets/log-out.svg",
-        route : "/",
-        label : "Logout"
-    },
+
 
     
 ]as ISidebarItem [];
